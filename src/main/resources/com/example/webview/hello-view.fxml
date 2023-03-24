@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.webview.HelloController">
+   <SplitPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <BorderPane prefHeight="398.0" prefWidth="600.0" stylesheets="@Styling.css">
+            <left>
+               <VBox fx:id="Menubar" prefHeight="383.0" prefWidth="157.0" spacing="5.0"
+                     style="-fx-border-color: black; -fx-background-color: #52438F;"
+                     BorderPane.alignment="CENTER">
+                  <TextField fx:id="heading" prefHeight="8.0" prefWidth="155.0"/>
+                  <Button mnemonicParsing="false" onAction="#AddHeading" text="Set">
+                     <VBox.margin>
+                        <Insets left="60.0" right="10.0"/>
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#AddImage" prefHeight="25.0" prefWidth="188.0"
+                          stylesheets="@Styling.css" text="Images">
+                     <VBox.margin>
+                        <Insets/>
+                     </VBox.margin>
+                  </Button>
+                  <TextField fx:id="textField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="160.0">
+                     <padding>
+                        <Insets bottom="5.0"/>
+                     </padding>
+                     <VBox.margin>
+                        <Insets/>
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#AddText" prefHeight="25.0"
+                          prefWidth="57.0" stylesheets="@Styling.css" text="Add">
+                     <VBox.margin>
+                        <Insets left="45.0" right="10.0" top="2.0"/>
+                     </VBox.margin>
+                  </Button>
+                  <TitledPane fx:id="Colors" animated="false" text="Colors &amp; Fonts">
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="96.0" prefWidth="179.0">
+                        <ColorPicker fx:id="colorPicker" layoutY="12.0" prefHeight="25.0"
+                                     prefWidth="98.0"/>
+                        <Button layoutX="98.0" layoutY="11.0" mnemonicParsing="false"
+                                onAction="#SetColor" text="Set"/>
+                        <Button layoutX="98.0" layoutY="47.0" mnemonicParsing="false" onAction="#setFont"
+                                text="Set"/>
+                        <ComboBox fx:id="fonts" layoutX="-1.0" layoutY="48.0" prefHeight="25.0"
+                                  prefWidth="98.0"/>
+                     </AnchorPane>
+                  </TitledPane>
+               </VBox>
+            </left>
+            <top>
+               <HBox fx:id="canvas" alignment="CENTER" prefHeight="48.0" prefWidth="600.0"
+                     style="-fx-background-color: #6F5CC2;" BorderPane.alignment="CENTER"/>
+            </top>
+            <center>
+               <HBox fx:id="canvas1" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity"
+                     prefHeight="350.0" prefWidth="281.0" BorderPane.alignment="CENTER">
+                  <HBox fx:id="canvas3" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                        prefHeight="59.0" prefWidth="282.0"/>
+               </HBox>
+            </center>
+            <right>
+               <HBox alignment="CENTER" prefHeight="249.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+                  <ImageView fx:id="imageView" fitHeight="281.0" fitWidth="160.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT"/>
+                     </cursor>
+                     <rotationAxis>
+                        <Point3D/>
+                     </rotationAxis>
+                     <HBox.margin>
+                        <Insets top="50.0"/>
+                     </HBox.margin>
+                  </ImageView>
+               </HBox>
+            </right>
+         </BorderPane>
+      </AnchorPane>
+   </SplitPane>
+</AnchorPane>
